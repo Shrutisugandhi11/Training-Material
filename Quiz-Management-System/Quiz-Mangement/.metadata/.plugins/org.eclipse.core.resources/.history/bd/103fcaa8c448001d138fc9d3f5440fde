@@ -1,0 +1,112 @@
+package com.epam.quiz.management.service;
+
+import java.util.List;
+import com.epam.quiz.management.dao.QuestionDao;
+import com.epam.quiz.management.model.Question;
+
+public class QuestionLibrary implements CrudSercvice<Question> {
+
+	private static List<Question> listOfQuestions = QuestionDao.getObjectList();
+
+//	public String modifyQuestion(int id, Question q) {
+//		String returnString;
+//		boolean flag = false;
+//		for (Question question1 : listOfQuestions) {
+//			if (question.getId() == question1.getId()) {
+//				question.setAnswer(question1.getAnswer());
+//				question.setDifficulty(question1.getDifficulty());
+//				question.setOptions(question1.getOptions());
+//				question.setTag(question1.getTag());
+//				question.setTitle(question1.getTitle());
+//				flag = true;
+//				break;
+//			}
+//		}
+//		if (flag) {
+//			returnString = "Question modified successfully";
+//		}
+//		returnString = "Question not found";
+//		return returnString;
+//	}
+//
+//	}
+
+	public String removeQuestion(int id) {
+
+	}
+
+	public Question update(int id, int choice, String updateValue) {
+
+	}
+
+	public List<Question> viewQuestion() {
+		return listOfQuestions;
+	}
+
+	public Question viewQuestionById(int id) {
+
+	}
+
+	@Override
+	public String toString() {
+		return "QuestionLibrary [listOfQuestions=" + listOfQuestions.toString() + "]";
+	}
+
+	@Override
+	public String create(Question question) {
+		listOfQuestions.add(question);
+		return "question added successfully";
+	}
+
+	@Override
+	public String read() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Question readById(int id) {
+		Question question = listOfQuestions.stream().filter(question1 -> question1.getId() == id).findAny().get();
+		return question;
+	}
+
+	@Override
+	public String update(int id, Question question) {
+		String updateValue;
+
+		Question ques = viewQuestionById(id);
+		if (ques != null) {
+			switch (choice) {
+			case 1:
+				ques.setTitle(updateValue);
+				break;
+			case 2:
+				ques.setTag(updateValue);
+				break;
+			case 3:
+				ques.setDifficulty(updateValue);
+				break;
+
+			default:
+				break;
+			}
+		}
+		return ques;
+
+	}
+
+	@Override
+	public String delete(int id) {
+		String returnString;
+	
+		Question question=listOfQuestions.stream().filter(question1->question1.getId() == id).findAny().get();
+		
+		if (question.) {
+			returnString = "Question not found";
+		}
+		returnString = "Question deleted successfully";
+		return returnString;
+
+	}
+
+}

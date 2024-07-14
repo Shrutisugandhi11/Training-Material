@@ -1,0 +1,10 @@
+package com.epam.quiz.management.ui;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class UserUi {
+
+	private static final Logger Logger = LogManager.getLogger(UserUi.class);
+	
+}

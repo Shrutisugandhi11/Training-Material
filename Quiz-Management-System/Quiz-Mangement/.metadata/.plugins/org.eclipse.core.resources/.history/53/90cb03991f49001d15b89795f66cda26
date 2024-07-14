@@ -1,0 +1,18 @@
+package com.epam.quiz.management.dao;
+
+import java.util.List;
+
+public interface UserDb<T,U> {
+
+	public T create(T obj);
+
+	public T findById(U id);
+
+	public List<T> findAll();
+
+	public T update(T obj);
+
+	public void delete(T obj);
+
+	public void deleteById(int id);
+}

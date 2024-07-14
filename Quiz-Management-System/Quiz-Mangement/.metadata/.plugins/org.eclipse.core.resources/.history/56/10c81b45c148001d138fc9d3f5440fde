@@ -1,0 +1,15 @@
+package com.epam.quiz.management.service;
+
+public interface CrudSercvice<T> {
+
+	public  String create(T obj);
+
+	public String read();
+	
+	public String readById (int id);
+	
+	public String update(int id,T obj);
+
+	public String delete(int id);
+
+}

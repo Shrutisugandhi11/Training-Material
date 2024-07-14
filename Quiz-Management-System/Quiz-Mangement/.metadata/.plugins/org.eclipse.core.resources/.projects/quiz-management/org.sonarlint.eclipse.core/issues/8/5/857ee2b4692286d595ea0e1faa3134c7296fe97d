@@ -1,0 +1,17 @@
+
+
+java:S3655="PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(‡Ó„ÿÿÿÿÿ8Ãº¥å¼0H¸ORMAJORZBUG
+‡
+java:S1488!"\Immediately return this expression instead of assigning it to the temporary variable "quiz".(Êûå@H¹ORMINORZ
+CODE_SMELL
+z
+java:S1612="BReplace this lambda with method reference 'Quiz::getQuestionList'.(‡Ó„ÿÿÿÿÿ8Ãº¥å¼0H¼ORMINORZ
+CODE_SMELL
+u
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ËÕÁ´H¾ORMAJORZBUG
+ˆ
+java:S1488"\Immediately return this expression instead of assigning it to the temporary variable "quiz".(ËÕÁ´H¿ORMINORZ
+CODE_SMELL
+™
+java:S1488="aImmediately return this expression instead of assigning it to the temporary variable "questions".(‡Ó„ÿÿÿÿÿ8Ãº¥å¼0HÂORMINORZ
+CODE_SMELL

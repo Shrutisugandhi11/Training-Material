@@ -1,0 +1,15 @@
+package com.epam.quiz.management.ui;
+
+import com.epam.quiz.management.service.CredentialsMismatchException;
+import com.epam.quiz.management.service.UserAuthentication;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserLogin {
+
+	public static void main(String[] args) {
+
+		Menu menu = new Menu();
+		menu.start();
+
+	}
+}

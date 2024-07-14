@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/construct-smallest-number-from-di-string-tester" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/construct-smallest-number-from-di-string-tester" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/count-vowels-permutation" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/count-vowels-permutation" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/kth-largest-element-in-an-array" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/kth-largest-element-in-an-array" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/largest-substring-with-at-least-k-repeating-characters" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/largest-substring-with-at-least-k-repeating-characters" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/letter-combinations-of-a-phone-number" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/letter-combinations-of-a-phone-number" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/m1-pss" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/m1-pss" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/m2-pss" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/m2-pss" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/maximum-length-of-repeated-sub-array" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/maximum-length-of-repeated-sub-array" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/maximum-sub-array" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/maximum-sub-array" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/meeting-rooms" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/meeting-rooms" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/number-of-dice-rolls-with-target-sum" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/number-of-dice-rolls-with-target-sum" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/paint-house" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/paint-house" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/recursive-factorial" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/recursive-factorial" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/remove-duplicate-letters" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/remove-duplicate-letters" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/search-a-2d-matrix-ii" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/search-a-2d-matrix-ii" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/sum-of-integers" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/sum-of-integers" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

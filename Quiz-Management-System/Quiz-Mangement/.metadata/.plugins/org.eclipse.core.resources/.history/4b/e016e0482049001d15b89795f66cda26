@@ -1,0 +1,39 @@
+package com.epam.quiz.management.dao;
+
+import java.util.List;
+
+import com.epam.quiz.management.model.User;
+
+public class UserDbImpl implements UserDb<User, String> {
+
+	public static List<User> usersList = UserDao.userList;
+
+	@Override
+	public User create(User user) {
+		usersList.add(user);
+		return usersList.get(usersList.size() - 1);
+
+	}
+
+	@Override
+	public void delete(User user) {
+		usersList.remove(user);
+
+	}
+
+	@Override
+	public User findById(String userName) {
+		return usersList.stream().filter(u -> u.getUserName().equals(userName)).findAny().get();
+	}
+
+	@Override
+	public List<User> findAll() {
+		return usersList;
+	}
+
+	@Override
+	public void deleteById(int index) {
+		users.remove(index);
+
+	}
+}

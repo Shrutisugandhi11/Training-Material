@@ -1,0 +1,81 @@
+package com.epam.quiz.management.service;
+
+import java.util.List;
+
+public class Question {
+	private int id;
+	private String title;
+	private List<Option> options;
+	private String difficulty;
+	private String tag;
+	private int answer;
+
+	public Question() {
+		super();
+	}
+
+	public Question(int id, String title, List<Option> options, String difficulty, String tag, int answer) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.options = options;
+		this.difficulty = difficulty;
+		this.tag = tag;
+		this.answer = answer;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public List<Option> getOptions() {
+		return options;
+	}
+
+	public void setOptions(List<Option> options) {
+		this.options = options;
+	}
+
+	public String getDifficulty() {
+		return difficulty;
+	}
+
+	public void setDifficulty(String difficulty) {
+		this.difficulty = difficulty;
+	}
+
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
+	public int getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(int answer) {
+		this.answer = answer;
+	}
+
+	@Override
+	public String toString() {
+		return "Question [id=" + id + ", title=" + title + ", options=" + options + ", difficulty=" + difficulty
+				+ ", tag=" + tag + ", answer=" + answer + "]";
+	}
+
+}

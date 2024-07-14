@@ -1,0 +1,20 @@
+package com.epam.quiz.management.ui;
+
+import com.epam.quiz.management.util.Scanner;
+
+public class UserHomePage {
+
+	public static void main(String[] args) {
+
+		System.out.println("Hello,User");
+		System.out.println("Do you want to take quiz?\n Press:Y/N");
+		String choiceString = Scanner.getInstance().nextLine();
+		if (choiceString.equalsIgnoreCase(choiceString)) {
+			UserUi userUi = new UserUi();
+			
+		} else {
+			UserLogin userLogin = new UserLogin();
+
+		}
+	}
+}

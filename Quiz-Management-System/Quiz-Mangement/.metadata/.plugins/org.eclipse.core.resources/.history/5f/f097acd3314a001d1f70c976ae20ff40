@@ -1,0 +1,12 @@
+package com.epam.quiz.management.ui;
+
+import com.epam.quiz.management.service.UserOperation;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserUi {
+	UserOperation userOperation = new UserOperation();
+	Logger.info(
+			"What operation do you wan to perform? \n 1.registerUser \n 2. \3. \n 4.Exit");
+	int operation = Scanner.getInstance().nextInt();
+
+}

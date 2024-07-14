@@ -1,0 +1,30 @@
+package com.epam.quiz.management.ui;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.epam.quiz.management.dao.QuizDao;
+import com.epam.quiz.management.service.Question;
+import com.epam.quiz.management.service.Quiz;
+
+public class UserUi {
+	List<Quiz> quizs = QuizDao.getQuizs();
+
+	public List<Quiz> getQuiz(String tag, String category) {
+
+		List<Quiz> quizList = quizs.stream().filter(x -> x.getCategory().equals(category))
+				.filter(x -> x.getTag().equals(tag)).collect(Collectors.toList());
+		
+
+		return quizList;
+
+	}
+	public Question getQuestion(int id) {
+				
+		
+		return null;
+		
+		
+	}
+
+}

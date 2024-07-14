@@ -1,0 +1,16 @@
+ckage com.epam.quiz.management.ui;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.epam.quiz.management.dao.QuizDao;
+import com.epam.quiz.management.service.Option;
+import com.epam.quiz.management.service.Question;
+import com.epam.quiz.management.service.Quiz;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserUi {
+	
+
+}

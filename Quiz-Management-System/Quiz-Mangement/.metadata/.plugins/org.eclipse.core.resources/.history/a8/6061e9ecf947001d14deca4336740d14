@@ -1,0 +1,33 @@
+com.epam.quiz.management.dao
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.epam.quiz.management.service.Admin;
+import com.epam.quiz.management.service.User;
+
+public class UserDao {
+	static List<User> userList = new ArrayList<>();
+
+	public List<User> getUsersList() {
+		return userList;
+
+	}
+
+	public static String addUser(User user) {
+		userList.add(user);
+		return "User added Successfully";
+	}
+
+	public UserDao() {
+		User user = new Admin("Admin", "admin", "admin");
+		User user2 = new User("Shruti", "1234", "user");
+		User user3 = new User("xyz", "9999", "user");
+		User user4 = new User("abcd", "0000", "user");
+		userList.add(user);
+		userList.add(user2);
+		userList.add(user3);
+		userList.add(user4);
+	}
+
+}

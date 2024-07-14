@@ -1,0 +1,57 @@
+package com.epam.quiz.management.ui;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.quiz.management.exception.InvalidInputException;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserUi {
+
+	private static final Logger Logger = LogManager.getLogger(UserUi.class);
+	UserOperation userOperation = new UserOperation();
+
+	public void prompt() {
+
+		try {
+			boolean isBool = true;
+			while (isBool) {
+				Logger.debug("===============================================");
+				Logger.info(
+						"What operation do you wan to perform? \n 1.registerUser \n 2.getUser \3.getAllUsers \n 4.removeUser \n 4.Exit");
+				int option = Scanner.getInstance().nextInt();
+
+				switch (option) {
+				case 1:
+					Logger.info("Enter Username");
+					String username = Scanner.getInstance().nextLine();
+					Logger.info("Enter Passward");
+					String passwordString = Scanner.getInstance().nextLine();
+					Logger.debug(userOperation.register(username, passwordString));
+
+					break;
+				case 2:
+					userOperation.getAllUsers();
+					break;
+
+				case 3:
+					String usernameString = Scanner.getInstance().nextLine();
+					Logger.debug(userOperation.removeUser(usernameString));
+					break;
+
+				default:
+					isBool = false;
+					Logger.debug("------------Thank you--------------");
+					break;
+
+				}
+			}
+			throw new InvalidInputException(" Entered Invalid operation");
+		}
+
+		catch (InvalidInputException e) {
+			Logger.error(e.getMessage());
+		}
+	}
+
+}

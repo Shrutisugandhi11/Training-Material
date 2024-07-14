@@ -1,0 +1,54 @@
+package com.epam.quiz.management.model;
+
+public class User {
+
+	protected String userName;
+	protected String password;
+	protected String roleType;
+
+	public User() {
+
+	}
+
+	public User(String userName, String password, String roleType) {
+		super();
+		this.userName = userName;
+		this.password = password;
+		this.roleType = roleType;
+	}
+
+	public User(String username2, String password2) {
+		this.userName = userName;
+		this.password = password;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getRoleType() {
+		return roleType;
+	}
+
+	public void setRoleType(String roleType) {
+		this.roleType = roleType;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	@Override
+	public String toString() {
+		return "User [userName=" + userName + ", password=" + password + ", roleType=" + roleType + "]";
+	}
+
+}

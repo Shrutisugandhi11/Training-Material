@@ -1,0 +1,95 @@
+package com.epam.quiz.management.ui;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.quiz.management.App;
+import com.epam.quiz.management.exception.InvalidInputException;
+import com.epam.quiz.management.util.Scanner;
+
+public class AdminUi {
+	private static final Logger Logger = LogManager.getLogger(AdminUi.class);
+	public void getQuizCrud() {
+
+		System.out.println("===============================================");
+
+		QuizCrud quizCrud = new QuizCrud();
+		boolean isBool = true;
+		try {
+			while (isBool) {
+
+				System.out.println("Which Operation do You want to perform?");
+				System.out.println(
+						"Enter: \n 1.Create Quiz \n 2.View Quiz \n 3.Delete a Quiz \n 4.logout \nYour Choice:");
+
+				int key = Scanner.getInstance().nextInt();
+
+				switch (key) {
+				case 1:
+					quizCrud.create();
+					break;
+
+				case 2:
+					quizCrud.read();
+					break;
+
+				case 3:
+					quizCrud.delete();
+					break;
+
+				default:
+					isBool = false;
+					System.out.println("----------------Thank you-----------------");
+					break;
+				}
+
+			}
+			throw new InvalidInputException("Entered Invalid Input");
+		} catch (InvalidInputException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public void getQuestionCrud() {
+		try {
+			QuestionCrud questionCrud = new QuestionCrud();
+
+			boolean isBool = true;
+			while (isBool) {
+
+				System.out.println("Which operation do you want to perform?");
+				System.out.println(
+						" 1.Create a Question \n 2.View a Question \n 3.Remove a Question \n 4.Modify a Question \n 5.Logout");
+				int option = Scanner.getInstance().nextInt();
+
+				switch (option) {
+				case 1:
+					System.out.println(questionCrud.create());
+					break;
+				case 2:
+					questionCrud.read();
+					break;
+				case 3:
+					System.out.println(questionCrud.update());
+					break;
+
+				case 4:
+					System.out.println(questionCrud.delete());
+					break;
+
+				default:
+					isBool = false;
+					System.out.println("------------Thank you--------------");
+					break;
+
+				}
+			}
+			throw new InvalidInputException(" Entered Invalid operation");
+		}
+
+		catch (InvalidInputException e) {
+			System.out.println(e.getMessage());
+		}
+
+	}
+}

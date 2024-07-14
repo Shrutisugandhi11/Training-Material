@@ -1,0 +1,57 @@
+package com.epam.quiz.management.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.epam.quiz.management.model.Question;
+import com.epam.quiz.management.model.Quiz;
+
+public class QuizLibrary {
+
+	private static List<Quiz> quizes = QuizDao.getQuizs();
+
+	public String createQuiz(Quiz quiz) {
+		quizes.add(quiz);
+		return "Quiz created succesfully";
+
+	}
+
+	public List<Quiz> viewQuiz(String tag) {
+		List<Quiz> quizs = quizes.stream().filter(x -> x.getCategory().equals(tag)).collect(Collectors.toList());
+		return quizs;
+	}
+
+	public String removeQuiz(int id) {
+		String returnString;
+		boolean flag = false;
+		for (Quiz question : quizes) {
+			if (question.getId() == id) {
+				quizes.remove(question);
+				flag = true;
+				break;
+			}
+		}
+		if (flag) {
+			returnString = "Quiz deleted successfully";
+		}
+		returnString = "Quiz not found";
+		return returnString;
+	}
+
+	public Quiz viewQuizById(int id) {
+		Quiz quiz = null;
+		for (Quiz q : quizes) {
+			if (q.getId() == id) {
+				quiz = q;
+			}
+		}
+		return quiz;
+	}
+
+	@Override
+	public String toString() {
+		return "QuizLibrary [quizes=" + quizes + "]";
+	}
+
+}

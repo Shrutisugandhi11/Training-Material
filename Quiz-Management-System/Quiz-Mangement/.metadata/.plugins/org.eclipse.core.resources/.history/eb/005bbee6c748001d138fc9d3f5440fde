@@ -1,0 +1,61 @@
+package com.epam.quiz.management.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.epam.quiz.management.dao.QuestionDao;
+import com.epam.quiz.management.model.Question;
+
+public class QuestionLibrary implements CrudSercvice<Question> {
+
+	private static List<Question> listOfQuestions = QuestionDao.getObjectList();
+
+
+
+	@Override
+	public String create(Question question) {
+		listOfQuestions.add(question);
+		return "question added successfully";
+	}
+
+	@Override
+	public List<Question> read() {
+		return listOfQuestions;
+
+	}
+
+	@Override
+	public Question readById(int id) {
+		Question question = listOfQuestions.stream().filter(question1 -> question1.getId() == id).findAny().get();
+		return question;
+	}
+
+	@Override
+	public Question update(int id, String updateValue) {
+		Question ques = readById(id);
+		ques.setTitle(updateValue);
+		return ques;
+
+	}
+
+	@Override
+	public String delete(int id) {
+		String returnString;
+
+		Optional<Question> question = listOfQuestions.stream().filter(question1 -> question1.getId() == id).findAny();
+
+		if (question.isPresent()) {
+			listOfQuestions.remove(question);
+			returnString = "Question deleted successfully";
+		} else {
+			returnString = "Question not found";
+		}
+
+		return returnString;
+
+	}
+	@Override
+	public String toString() {
+		return "QuestionLibrary [listOfQuestions=" + listOfQuestions.toString() + "]";
+	}
+}

@@ -1,0 +1,95 @@
+package com.epam.quiz.management.ui;
+
+import java.util.ArrayList;
+import java.util.List;
+import com.epam.quiz.management.dao.QuestionDao;
+import com.epam.quiz.management.model.Option;
+import com.epam.quiz.management.model.Question;
+import com.epam.quiz.management.service.QuestionLibrary;
+import com.epam.quiz.management.util.Scanner;
+
+public class QuestionCrud {
+	private Question question;
+
+	List<Option> listOfOptions = new ArrayList<>();
+	QuestionLibrary questionLibrary = new QuestionLibrary();
+
+	public Question create() {
+
+		System.out.println("--------------------------------");
+		question = new Question();
+
+		System.out.println("Enter Question Details :\n Enter the question id: ");
+		int id = Scanner.getInstance().nextInt();
+		Scanner.getInstance().nextLine();
+
+		question.setId(id);
+		System.out.println("Enter the question title : ");
+		String title = Scanner.getInstance().nextLine();
+
+		question.setTitle(title);
+		System.out.println("Enter the question Diffculty : ");
+		String difficulty = Scanner.getInstance().nextLine();
+
+		question.setDifficulty(difficulty);
+		System.out.println("Enter the question tag : ");
+		String tag = Scanner.getInstance().nextLine();
+
+		question.setTag(tag);
+		System.out.println("Enter the question answer : ");
+		int answer = Scanner.getInstance().nextInt();
+
+		Scanner.getInstance().nextLine();
+		question.setAnswer(answer);
+
+		System.out.println("Enter the options : ");
+		for (int i = 1; i <= 4; i++) {
+			System.out.println("option " + i + " : ");
+			String choice = Scanner.getInstance().nextLine();
+			Option option1 = new Option();
+			option1.setChoice(choice);
+			listOfOptions.add(option1);
+		}
+
+		question.setOptions(listOfOptions);
+		System.out.println(questionLibrary.createQuestion(question));
+		return question;
+	}
+
+	public String modify() {
+		System.out.println("---------------------------------");
+		System.out.println(
+				"1 : Update Title \n2 : Update Tag \n 3:Update Difficulty \n4 : Update Options \n Your Choice:");
+		int choice = Scanner.getInstance().nextInt();
+		System.out.println("Enter Question id:");
+		int id = Scanner.getInstance().nextInt();
+		Scanner.getInstance().nextLine();
+		System.out.println("Enter your updating value");
+		String updateString = Scanner.getInstance().nextLine();
+
+		questionLibrary.update(id, choice, updateString);
+		return "updated succesfully";
+	}
+
+	public String delete() {
+		System.out.println("------------------------------");
+		
+		System.out.println("Enter the question id which you want to remove : ");
+		int removeId = Scanner.getInstance().nextInt();
+		
+		question = questionLibrary.viewQuestionById(removeId);
+		if (question == null) {
+			System.out.println("Question with id : " + removeId + " is not found ");
+		}
+
+		return questionLibrary.removeQuestion(removeId);
+	}
+
+	public void read() {
+		System.out.println("---------------------------------");
+		
+		List<Question> list = questionLibrary.viewQuestion();
+		list.stream().forEach(System.out::println);
+	}
+
+}

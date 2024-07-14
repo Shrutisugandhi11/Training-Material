@@ -1,0 +1,55 @@
+package com.epam.quiz.management.ui;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.quiz.management.App;
+import com.epam.quiz.management.exception.InvalidInputException;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserHomePage {
+	private static final Logger Logger = LogManager.getLogger(UserHomePage.class);
+	Menu menu = new Menu();
+
+	public void redirectUser(String username) {
+
+		Logger.debug("==================Welcome To User Page======================");
+		Logger.info("Hello,");
+
+		Logger.info("\nDo you want to take quiz? \nPress:Y/N \nYour Choice:");
+		String choiceString = Scanner.getInstance().nextLine();
+
+		if (choiceString.equalsIgnoreCase("y")) {
+
+			QuizGenerator quizGenerator = new QuizGenerator();
+			quizGenerator.getQuiz();
+			quizGenerator.getQuestion();
+		} else {
+			menu.getDashboard();
+		}
+	}
+
+	public void redirectAdmin(String username) {
+
+		Logger.debug("======================Welcome To Admin Page======================");
+
+		Logger.debug("Hello ," + username);
+
+		Logger.info(
+				"What operation do you wan to perform? \n 1.Go To Quiz Section \n 2.Go To Question Section \n 3.Exit");
+		int operation = Scanner.getInstance().nextInt();
+
+		AdminUi adminUi = new AdminUi();
+
+		if (operation == 1) {
+			adminUi.getQuizCrud();
+		} else if (operation == 2) {
+
+			adminUi.getQuestionCrud();
+
+		} else {
+			menu.getDashboard();
+		}
+	}
+
+}

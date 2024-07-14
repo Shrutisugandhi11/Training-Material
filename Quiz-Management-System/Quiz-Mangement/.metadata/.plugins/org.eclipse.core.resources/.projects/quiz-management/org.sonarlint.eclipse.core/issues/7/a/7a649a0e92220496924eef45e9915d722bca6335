@@ -1,0 +1,28 @@
+
+[	java:S108.")Either remove or fill this block of code.(…æà8äü‚ä¼0HÊORMAJORZ
+CODE_SMELL
+V
+java:S2629o"$Invoke method(s) only conditionally.(­ü€I8ªÓİè¼0HËORMAJORZ
+CODE_SMELL
+\
+java:S2629K"$Invoke method(s) only conditionally.(øº¡üÿÿÿÿ8ÆŞ¦Ø¼0HÌORMAJORZ
+CODE_SMELL
+`	java:S108X")Either remove or fill this block of code.(éÔÉ¶øÿÿÿÿ8ÄŸ‚ä¼0HÍORMAJORZ
+CODE_SMELL
+«
+java:S1192"pDefine a constant instead of duplicating this literal "===============================================" 3 times.(ÅÓ¸›üÿÿÿÿ8¯èÍã¼0HÎORCRITICALZ
+CODE_SMELL
+W
+java:S2629#"$Invoke method(s) only conditionally.(òÑŸ´8®ö¥Ø¼0HÒORMAJORZ
+CODE_SMELL
+W
+java:S2629G"$Invoke method(s) only conditionally.(Š£š¥8ÆŞ¦Ø¼0HÓORMAJORZ
+CODE_SMELL
+a	java:S108†")Either remove or fill this block of code.(éÔÉ¶øÿÿÿÿ8¢‚‰ä¼0HÔORMAJORZ
+CODE_SMELL
+\
+java:S2629A"$Invoke method(s) only conditionally.(›é¨¹üÿÿÿÿ8ÆŞ¦Ø¼0HÕORMAJORZ
+CODE_SMELL
+\
+java:S2629y"$Invoke method(s) only conditionally.(±ñ”ëıÿÿÿÿ8¯èÍã¼0HÖORMAJORZ
+CODE_SMELL

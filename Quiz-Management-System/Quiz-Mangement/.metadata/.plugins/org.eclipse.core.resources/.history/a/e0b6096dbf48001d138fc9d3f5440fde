@@ -1,0 +1,15 @@
+package com.epam.quiz.management.service;
+
+public interface CrudSercvice<T,U> {
+
+	public  U create(T obj);
+
+	public T read(int id);
+	
+	public 
+	
+	public U update(int id);
+
+	public U delete(int id);
+
+}

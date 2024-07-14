@@ -1,0 +1,14 @@
+
+M
+java:S1854"8Remove this useless assignment to local variable "role".(À ‚]
+S
+java:S1854"8Remove this useless assignment to local variable "pass".(ø≈€ª˝ˇˇˇˇ
+N
+java:S1854"8Remove this useless assignment to local variable "name".(—ı÷ı
+?
+java:S1481")Remove this unused "name" local variable.(—ı÷ı
+D
+java:S1481")Remove this unused "pass" local variable.(ø≈€ª˝ˇˇˇˇ
+>
+java:S1481")Remove this unused "role" local variable.(À ‚]
+Q	java:S125"<This block of commented-out lines of code should be removed.(ˆ£§æ

@@ -1,0 +1,5 @@
+package com.epam.quiz.management.exception;
+
+public class InvalidInputException {
+
+}

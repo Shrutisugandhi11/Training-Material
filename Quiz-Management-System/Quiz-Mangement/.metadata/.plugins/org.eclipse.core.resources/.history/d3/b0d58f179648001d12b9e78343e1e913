@@ -1,0 +1,43 @@
+package com.epam.quiz.management.ui;
+
+import com.epam.quiz.management.dao.UserLibrary;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserHomePage {
+
+	public void redirectUser(String username) {
+		System.out.println("==================Welcome To User Page======================");
+		System.out.println("Hello," + username);
+		System.out.println("\nDo you want to take quiz? \nPress:Y/N \nYour Choice:");
+		String choiceString = Scanner.getInstance().nextLine();
+
+		if (choiceString.equalsIgnoreCase("y")) {
+
+			UserLibrary userLibrary = new UserLibrary();
+			userLibrary.getQuiz();
+			userLibrary.getQuestion();
+		} else {
+			UserLogin userLogin = new UserLogin();
+
+		}
+	}
+
+	public void redirectAdmin(String username) {
+
+		System.out.println("======================Welcome To Admin Page======================");
+		System.out.println("Hello ," + username);
+
+		System.out.println("What operation do you wan to perform? \n 1.Go To Quiz Section \n 2.Go To Question Section");
+		int operation = Scanner.getInstance().nextInt();
+
+		AdminUi adminUi = new AdminUi();
+
+		if (operation == 1) {
+			adminUi.getQuizCrud();
+		} else if (operation == 2) {
+
+			adminUi.getQuestionCrud();
+
+		}
+	}
+}

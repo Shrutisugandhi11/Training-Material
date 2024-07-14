@@ -1,0 +1,29 @@
+package com.epam.quiz.management.service;
+
+public class Option {
+	private String choice;
+
+	public Option(String choice) {
+		super();
+		this.choice = choice;
+	}
+
+	public Option() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getChoice() {
+		return choice;
+	}
+
+	public void setChoice(String choice) {
+
+		this.choice = choice;
+	}
+
+	@Override
+	public String toString() {
+		return "Option choice=" + choice + "";
+	}
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head><title>Quiz-Management-System</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+
+   <table class="table table-bordered table-striped">
+    <caption>List of Available Quizzes:</caption>
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Tag</th>
+      <th>Category</th>`
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="quiz: ${quizzes}">
+      <td th:text="${quiz.id}" />
+      <td th:text="${quiz.tag}" />
+      <td th:text="${quiz.category}" />
+
+    <td >
+      <td >
+        <a th:href="@{/quiz/fetch/question/__${quiz.id}__}" class="btn btn-info">Take Quiz</a>
+      </td>
+
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+</div>
+
+
+</body>
+</html>

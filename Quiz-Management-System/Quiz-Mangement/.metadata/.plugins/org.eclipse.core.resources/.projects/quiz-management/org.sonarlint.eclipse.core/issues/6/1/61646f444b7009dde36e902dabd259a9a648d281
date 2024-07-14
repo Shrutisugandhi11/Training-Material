@@ -1,0 +1,21 @@
+
+c
+java:S26294"7Use the built-in formatting to construct this argument.(†¡¿§HÛORMAJORZ
+CODE_SMELL
+q
+java:S1612Y"9Replace this lambda with method reference 'Logger::info'.(¯¡ë‰øÿÿÿÿ8ûÀ…å¼0HÜORMINORZ
+CODE_SMELL
+d	java:S1062"9Replace this use of System.out or System.err by a logger.(‹³‡ŸHÞORMAJORZ
+CODE_SMELL
+^
+java:S3416"-Update this logger to use "QuestionUi.class".(€†µŠüÿÿÿÿHßORMINORZ
+CODE_SMELL
+m
+java:S34574"AFormat specifiers should be used instead of string concatenation.(†¡¿§HàORMAJORZ
+CODE_SMELL
+t
+java:S1117Y"<Rename "question" which hides the field declared at line 17.(¯¡ë‰øÿÿÿÿ8ûÀ…å¼0HáORMAJORZ
+CODE_SMELL
+n
+java:S1611Y"6Remove the parentheses around the "question" parameter(¯¡ë‰øÿÿÿÿ8ûÀ…å¼0HâORMINORZ
+CODE_SMELL

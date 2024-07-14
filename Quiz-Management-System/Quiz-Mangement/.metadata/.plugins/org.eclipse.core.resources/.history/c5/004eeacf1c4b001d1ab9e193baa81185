@@ -1,0 +1,20 @@
+package com.epam.junit.demo;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+	public String removeAString(String string) {
+
+		if (string.length() == 0)
+			return string;
+		char firstPosition = string.charAt(0);
+		char secondPosition = string.charAt(1);
+		if (firstPosition == 'A')
+			System.out.println(string);
+		string = string.substring(1, string.length());
+		System.out.println(string);
+		return string;
+	}
+}

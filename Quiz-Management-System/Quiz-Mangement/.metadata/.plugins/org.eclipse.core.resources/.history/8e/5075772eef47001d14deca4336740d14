@@ -1,0 +1,23 @@
+package com.epam.quiz.management.ui;
+
+import com.epam.quiz.management.dao.UserLibrary;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserHomePage {
+
+	public void start(String username) {
+System.out.println("========================================Welcome To User Page========================================");
+		System.out.println("Hello,"+username);  
+		System.out.println("Do you want to take quiz?\n Press:Y/N");
+		String choiceString = Scanner.getInstance().nextLine();
+		if (choiceString.equalsIgnoreCase("y")) {
+			UserLibrary userLibrary = new UserLibrary();
+			userLibrary.getQuiz();
+			userLibrary.getQuestion();
+  
+		} else {
+			UserLogin userLogin = new UserLogin();
+
+		}
+	}
+}

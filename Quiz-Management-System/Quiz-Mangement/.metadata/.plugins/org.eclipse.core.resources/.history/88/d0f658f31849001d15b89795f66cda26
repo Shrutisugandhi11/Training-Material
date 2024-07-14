@@ -1,0 +1,12 @@
+package com.epam.quiz.management.service;
+
+import java.util.List;
+
+import com.epam.quiz.management.model.User;
+
+public class UserService {
+
+	
+
+	
+}

@@ -1,0 +1,14 @@
+package com.epam.quiz.management;
+
+import com.epam.quiz.management.ui.Menu;
+
+public class App {
+//	private static Logger logger = LogManager.getLogger(App.class);
+
+	public static void main(String[] args) {
+
+		Menu menu = new Menu();
+		menu.getDashboard();
+
+	}
+}

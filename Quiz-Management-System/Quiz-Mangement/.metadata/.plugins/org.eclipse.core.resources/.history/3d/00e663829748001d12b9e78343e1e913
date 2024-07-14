@@ -1,0 +1,19 @@
+package com.epam.quiz.management.ui;
+
+import com.epam.quiz.management.dao.UserDao;
+import com.epam.quiz.management.service.User;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserRegister {
+
+	public String registration(String userName, String passwordString) {
+		System.out.println("Enter your role:");
+		String role = Scanner.getInstance().nextLine();
+
+		User user = new User(userName, passwordString, role);
+		String returnString = UserDao.addUser(user);
+
+		return returnString;
+	}
+
+}

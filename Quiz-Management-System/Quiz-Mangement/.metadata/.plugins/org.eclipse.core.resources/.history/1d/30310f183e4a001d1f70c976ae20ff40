@@ -1,0 +1,33 @@
+package com.epam.quiz.management.ui;
+
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.quiz.management.dao.QuizDao;
+import com.epam.quiz.management.model.Question;
+import com.epam.quiz.management.model.Quiz;
+import com.epam.quiz.management.util.Scanner;
+
+public class QuizGenerator {
+
+	private static final Logger Logger = LogManager.getLogger(QuizGenerator.class);
+	static List<Quiz> quizs = QuizDao.getQuizs();
+	QuizUi quizUi = new QuizUi();
+
+	public void getQuiz() {
+		quizs.forEach((quiz) -> {
+			Logger.info("Quiz with Id:" + quiz.getId());
+			Logger.info("Available Quiz category:" + quiz.getCategory());
+			Logger.info("Available Difficulty level:" + quiz.getTag());
+		});
+
+	}
+
+	public String getQuestion() {		
+		return quizs.
+		
+	}
+
+}

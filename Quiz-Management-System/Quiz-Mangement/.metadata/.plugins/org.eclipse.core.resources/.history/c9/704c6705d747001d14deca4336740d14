@@ -1,0 +1,52 @@
+package com.epam.quiz.management.ui;
+
+import com.epam.quiz.management.service.CredentialsMismatchException;
+import com.epam.quiz.management.service.UserAuthentication;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserLogin {
+
+	public static void main(String[] args) {
+		int choice;
+		String userName;
+		String passwordString;
+
+		UserAuthentication userAuthentication = new UserAuthentication();
+
+		System.out.println("Enter your choice: \n1.User \n2.Admin \n3.Register User");
+		choice =Scanner.getInstance().nextInt();
+		Scanner.getInstance().nextLine();
+		String role = (choice == 1) ? "user" : "admin";
+		System.out.println("-----------Welcome To Login Page-----------" + "\n Please enter your username ");
+		userName = Scanner.getInstance().nextLine();
+		System.out.println("Enter Your Password");
+		passwordString = Scanner.getInstance().nextLine();
+		Boolean isValidateUser = userAuthentication.validateUser(userName, passwordString, role);
+		
+		if(choice==3) {
+			
+			U
+			
+		}
+		else {		
+		try {
+			if (isValidateUser)
+				throw new CredentialsMismatchException("user login error");
+
+			if (role.equals("admin")) {
+
+				System.out.println("Enterd 1");
+			} else {
+
+				System.out.println("entered 2");
+			}
+		} catch (CredentialsMismatchException e) {			
+		}
+		}
+		
+		
+		
+		
+		
+	}
+}

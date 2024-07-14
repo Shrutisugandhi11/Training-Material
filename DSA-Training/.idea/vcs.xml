@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/construct-smallest-number-from-di-string-tester" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/count-vowels-permutation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/kth-largest-element-in-an-array" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/largest-substring-with-at-least-k-repeating-characters" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/letter-combinations-of-a-phone-number" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/m1-pss" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/m2-pss" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/maximum-length-of-repeated-sub-array" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/maximum-sub-array" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/meeting-rooms" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/number-of-dice-rolls-with-target-sum" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/paint-house" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/recursive-factorial" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/remove-duplicate-letters" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/search-a-2d-matrix-ii" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/sum-of-integers" vcs="Git" />
+  </component>
+</project>

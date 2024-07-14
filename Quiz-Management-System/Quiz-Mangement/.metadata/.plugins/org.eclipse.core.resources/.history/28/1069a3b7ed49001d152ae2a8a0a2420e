@@ -1,0 +1,71 @@
+package com.epam.quiz.management.ui;
+
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.quiz.management.App;
+import com.epam.quiz.management.dao.QuizDao;
+import com.epam.quiz.management.model.Question;
+import com.epam.quiz.management.model.Quiz;
+import com.epam.quiz.management.util.Scanner;
+
+public class QuizGenerator {
+	
+	private static final Logger Logger = LogManager.getLogger(QuizGenerator.class);
+	static List<Quiz> quizs = QuizDao.getQuizs();
+
+	List<Question> questions;
+
+	public List<Quiz> getQuiz() {
+		for (Quiz quiz : quizs) {
+			Logger.info("Quiz with Id:" + quiz.getId());
+			Logger.info("Available Quiz category:" + quiz.getCategory());
+			Logger.info("Available Difficulty level:" + quiz.getTag());
+		}
+		return quizs;
+
+	}
+
+	public List<Question> getQuestionList(int id) {
+		List<Question> questions = quizs.stream().filter(q -> q.getId() == id).map(q -> q.getQuestionList()).findAny()
+				.get();
+		return questions;
+
+	}
+
+	public int getQuestion() {
+
+		Logger.info("Please Enter Quiz Id You want to take?");
+		int id = Scanner.getInstance().nextInt();
+		int score = 0, totalMarks = 0;
+
+		questions = getQuestionList(id);
+		int iterator = 0;
+
+		for (Question question : questions) {
+			iterator++;
+
+			Logger.info("Question " + iterator + " : " + question.getTitle());
+			question.getOptions().stream().forEach(System.out::println);
+
+			Logger.info("Please Select Option 1|2|3|4  to Move to another Question:");
+			int userAnswer = Scanner.getInstance().nextInt();
+
+			if (userAnswer == question.getAnswer()) {
+				score++;
+				totalMarks++;
+				Logger.info("Correct,Your Score:" + score);
+			} else {
+				totalMarks++;
+				Logger.info("OOps,It's Incorrect");
+			}
+
+		}
+		
+		System.out.println("Your Score : "+score +"/"+totalMarks);
+		return score;
+	}
+
+}

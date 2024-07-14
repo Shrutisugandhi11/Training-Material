@@ -1,0 +1,22 @@
+package com.epam.quiz.management.ui;
+
+import com.epam.quiz.management.service.User;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserRegister {
+
+	public User registration() {
+		System.out.println("Enter User name:");
+		String username = Scanner.getInstance().nextLine();
+		System.out.println("Enter password:");
+		String password = Scanner.getInstance().nextLine();
+		System.out.println("Enter your role:");
+		String role = Scanner.getInstance().nextLine();
+
+		User user = new User(username, password, role);
+		
+
+		return user;
+	}
+
+}

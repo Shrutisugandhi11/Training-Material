@@ -1,0 +1,46 @@
+package com.epam.quiz.management.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.epam.quiz.management.dao.UserDao;
+import com.epam.quiz.management.ui.AdminHomePage;
+
+public class UserAuthentication {
+	public boolean validateUser(String username, String password, String roleType) {
+		User user;
+		UserDao userDao = new UserDao();
+		List<User> userList = userDao.getUsersList();
+
+		Optional<User> optionalUser = userList.stream().filter(x -> x.getRoleType().equals(roleType))
+				.filter(x -> x.getUserName().equals(username)).findAny();
+		try {
+			if (optionalUser.isPresent()) {
+				user = optionalUser.get();
+				try {
+
+					if (user.getUserName().equals(username) && user.getPassword().equals(password)) {
+
+						if (roleType.equals("admin")) {
+							return true;
+						} else {
+							return true;
+						}
+					} else
+						throw new CredentialsMismatchException(
+								"Invalid credentials ,Please Enter valid credentials!!!");
+
+				} catch (CredentialsMismatchException e) {
+
+					System.out.println("Entered Catch");
+				}
+			} else
+				throw new CredentialsMismatchException("Error while validating user please retry....");
+		} catch (CredentialsMismatchException e) {
+
+		}
+
+		return true;
+	}
+
+}

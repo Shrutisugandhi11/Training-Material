@@ -1,0 +1,29 @@
+package com.epam.quiz.management.ui;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.quiz.management.model.User;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserRegister {
+	UserOperation userOperation=new UserOperation();
+	private static final Logger Logger = LogManager.getLogger(UserHomePage.class);
+
+	public String registration(String userName, String passwordString) {
+		Logger.info("Enter your role:");
+
+		String returnString = "";
+		String role = Scanner.getInstance().nextLine();
+
+		try {
+			//User user = new User(userName, passwordString, role);
+			returnString = userOperation.register(userName, passwordString);
+		} catch (NullPointerException e) {
+			Logger.error(e.getMessage());
+		}
+
+		return returnString;
+
+	}
+}

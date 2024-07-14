@@ -1,0 +1,95 @@
+package com.epam.quiz.management.service;
+
+import java.util.List;
+import com.epam.quiz.management.dao.QuestionDao;
+import com.epam.quiz.management.model.Question;
+
+public class QuestionLibrary implements CrudSercvice<Question> {
+
+	private static List<Question> listOfQuestions = QuestionDao.getObjectList();
+
+	public String createQuestion(Question q) {
+		listOfQuestions.add(q);
+		return "question added successfully";
+	}
+
+	public String modifyQuestion(int id, Question q) {
+		String returnString;
+		boolean flag = false;
+		for (Question question : listOfQuestions) {
+			if (question.getId() == q.getId()) {
+				question.setAnswer(q.getAnswer());
+				question.setDifficulty(q.getDifficulty());
+				question.setOptions(q.getOptions());
+				question.setTag(q.getTag());
+				question.setTitle(q.getTitle());
+				flag = true;
+				break;
+			}
+		}
+		if (flag) {
+			returnString = "Question modified successfully";
+		}
+		returnString = "Question not found";
+		return returnString;
+	}
+
+	public String removeQuestion(int id) {
+		String returnString;
+		boolean flag = false;
+		for (Question question : listOfQuestions) {
+			if (question.getId() == id) {
+				listOfQuestions.remove(question);
+				flag = true;
+				break;
+			}
+		}
+		if (!flag) {
+			returnString = "Question not found";
+		}
+		returnString = "Question deleted successfully";
+		return returnString;
+	}
+
+	public Question update(int id, int choice, String updateValue) {
+		Question ques = viewQuestionById(id);
+		if (ques != null) {
+			switch (choice) {
+			case 1:
+				ques.setTitle(updateValue);
+				break;
+			case 2:
+				ques.setTag(updateValue);
+				break;
+			case 3:
+				ques.setDifficulty(updateValue);
+				break;
+
+			default:
+				break;
+			}
+		}
+		return ques;
+
+	}
+
+	public List<Question> viewQuestion() {
+		return listOfQuestions;
+	}
+
+	public Question viewQuestionById(int id) {
+		Question ques = new Question();
+		for (Question question : listOfQuestions) {
+			if (question.getId() == id) {
+				ques = question;
+			}
+		}
+		return ques;
+	}
+
+	@Override
+	public String toString() {
+		return "QuestionLibrary [listOfQuestions=" + listOfQuestions.toString() + "]";
+	}
+
+}

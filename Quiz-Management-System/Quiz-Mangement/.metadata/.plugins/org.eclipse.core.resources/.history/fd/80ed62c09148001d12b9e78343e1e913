@@ -1,0 +1,86 @@
+package com.epam.quiz.management.ui;
+
+import java.util.List;
+import com.epam.quiz.management.dao.QuestionLibrary;
+import com.epam.quiz.management.service.Question;
+import com.epam.quiz.management.service.Quiz;
+import com.epam.quiz.management.util.Scanner;
+
+public class AdminUi {
+
+	public void getQuizCrud() {
+
+		System.out.println("===============================================");
+
+		QuizCrud quizCrud = new QuizCrud();
+		boolean isBool = true;
+
+		while (isBool) {
+
+			System.out.println("Which Operation do You want to perform?");
+			System.out.println(
+					"Enter: \n 1.Create Quiz \n 2.View Quiz \n 3.Marks for Question \n 4.Delete a Quiz \n 5.logout \nYour Choice:");
+			int key = Scanner.getInstance().nextInt();
+
+			switch (key) {
+			case 1:
+				quizCrud.create();
+				break;
+
+			case 2:
+				quizCrud.read();
+				break;
+
+			case 3:
+
+				break;
+
+			case 4:
+				quizCrud.delete();
+				break;
+
+			default:
+				isBool = false;
+				System.out.println("------------------Thank you---------------------");
+				break;
+			}
+
+		}
+	}
+
+	public void getQuestionCrud() {
+		QuestionCrud questionCrud = new QuestionCrud();
+
+		Scanner sc = new Scanner(System.in);
+		boolean isBool = true;
+		while (isBool) {
+			System.out.println("Which operation do you want to perform?");
+			System.out.println(
+					" 1.Create a Question \n 2.Modify a Question \n 3.Remove a Question \n 4.View a Question \n 5.Logout");
+			int option = sc.nextInt();
+			switch (option) {
+			case 1:
+				System.out.println(questionCrud.create());
+				break;
+			case 2:
+				System.out.println(questionCrud.modify());
+				break;
+			case 3:
+				System.out.println(questionCrud.delete());
+
+				break;
+
+			case 4:
+				questionCrud.read();
+				break;
+
+			default:
+				isBool = false;
+				System.out.println("Thank you ");
+				System.out.println("-------------------------------------");
+				break;
+
+			}
+		}
+	}
+}

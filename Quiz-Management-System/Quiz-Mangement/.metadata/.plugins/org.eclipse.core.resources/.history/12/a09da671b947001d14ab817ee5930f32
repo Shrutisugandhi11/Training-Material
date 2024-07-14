@@ -1,0 +1,29 @@
+package com.epam.quiz.management.dao;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import com.epam.quiz.management.service.Question;
+import com.epam.quiz.management.service.Quiz;
+
+public class QuizDao {
+
+	static List<Question> questions = QuestionDao.getObjectList();
+
+	public static List<Quiz> getQuizs() {
+		return Stream.of(
+				new Quiz(1, "java", "easy",
+						(QuestionDao.getObjectList();.stream().filter(x -> x.getDifficulty().equals("easy"))
+								.collect(Collectors.toList()))),
+				new Quiz(2, "java", "medium",
+						(QuestionDao.getObjectList();.stream().filter(x -> x.getDifficulty().equals("medium"))
+								.collect(Collectors.toList()))),
+				new Quiz(3, "c", "hard", (QuestionDao.getObjectList();.stream().filter(x -> x.getDifficulty().equals("hard"))
+						.collect(Collectors.toList())))
+				).collect(Collectors.toList());
+
+	}
+
+}
+//Stream.of(new Quiz(1,"java","easy",(questions.stream().filter(x->x.getDifficulty().equals("easy")).collect(Collectors.toList())),new Quiz(2,"java","medium",(questions.stream().filter(x->x.getDifficulty().equals("medium")).collect(Collectors.toList()))),new Quiz(3,"c","hard",(questions.stream().filter(x->x.getDifficulty().equals("hard")).collect(Collectors.toList()))))).collect(Collectors.toList());

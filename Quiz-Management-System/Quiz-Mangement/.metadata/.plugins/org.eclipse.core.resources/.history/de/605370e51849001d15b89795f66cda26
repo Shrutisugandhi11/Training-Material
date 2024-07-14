@@ -1,0 +1,64 @@
+package com.epam.quiz.management.ui;
+
+import java.util.List;
+
+import com.epam.quiz.management.dao.QuizDao;
+import com.epam.quiz.management.model.Question;
+import com.epam.quiz.management.model.Quiz;
+import com.epam.quiz.management.util.Scanner;
+
+public class GeneratingQuiz {
+	static List<Quiz> quizs = QuizDao.getQuizs();
+
+	List<Question> questions;
+
+	public List<Quiz> getQuiz() {
+		for (Quiz quiz : quizs) {
+			System.out.println("Quiz with Id:" + quiz.getId());
+			System.out.println("Available Quiz category:" + quiz.getCategory());
+			System.out.println("Available Difficulty level:" + quiz.getTag());
+		}
+		return quizs;
+
+	}
+
+	public List<Question> getQuestionList(int id) {
+		List<Question> questions = quizs.stream().filter(q -> q.getId() == id).map(q -> q.getQuestionList()).findAny()
+				.get();
+		return questions;
+
+	}
+
+	public int getQuestion() {
+
+		System.out.println("Please Enter Quiz Id You want to take?");
+		int id = Scanner.getInstance().nextInt();
+		int score = 0, totalMarks = 0;
+
+		questions = getQuestionList(id);
+		int iterator = 0;
+
+		for (Question q : questions) {
+			iterator++;
+
+			System.out.println("Question " + iterator + " : " + q.getTitle());
+			q.getOptions().stream().forEach(System.out::println);
+
+			System.out.println("Please Select Option 1|2|3|4  to Move to another Question:");
+			int userAnswer = Scanner.getInstance().nextInt();
+
+			if (userAnswer == q.getAnswer()) {
+				score++;
+				totalMarks++;
+				System.out.println("Correct,Your Score:" + score);
+			} else {
+				totalMarks++;
+				System.out.println("OOps,It's Incorrect");
+			}
+
+		}
+		System.out.println("Your Score : "+score +"/"+totalMarks);
+		return score;
+	}
+
+}

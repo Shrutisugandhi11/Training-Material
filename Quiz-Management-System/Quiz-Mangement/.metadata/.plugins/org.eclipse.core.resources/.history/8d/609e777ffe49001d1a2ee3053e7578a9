@@ -1,0 +1,38 @@
+package com.epam.quiz.management.ui;
+
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.quiz.management.dao.UserDb;
+import com.epam.quiz.management.dao.UserDbImpl;
+import com.epam.quiz.management.model.User;
+
+public class UserOperation {
+	private static final Logger Logger = LogManager.getLogger(UserOperation.class);
+	UserDb<User, String> userDb = new UserDbImpl();
+
+	public String register(String username, String password) {
+		User user = new User(username, password);
+		userDb.create(user);
+		return "Successfully registered";
+	}
+
+	public String getUser(String username) {
+		return userDb.findById(username).toString();
+
+	}
+
+	public String getAllUsers() {
+		List<User> users = userDb.findAll();
+		users.stream().forEach((user) -> Logger.info(user));
+		return "User List Displayed";
+	}
+
+	public String removeUser(String username) {
+
+		return "Deleted Succesfully";
+	}
+
+}

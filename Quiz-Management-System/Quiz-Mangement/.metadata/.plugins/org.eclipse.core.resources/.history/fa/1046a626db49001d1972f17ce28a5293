@@ -1,0 +1,4 @@
+log4j.rootLogger=DEBUG,L
+log4j.appender.L=org.apache.log4j.ConsoleAppender
+log4j.appender.L.layout=org.apache.log4j.PatternLayout
+log4j.appender.L.layout.ConversionPattern=%-4r [%t] %-5p %c %x - %m%n

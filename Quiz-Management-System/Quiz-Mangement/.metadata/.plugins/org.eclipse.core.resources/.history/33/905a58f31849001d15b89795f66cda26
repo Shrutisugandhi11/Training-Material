@@ -1,0 +1,21 @@
+package com.epam.quiz.management.service;
+
+import java.util.List;
+
+import com.epam.quiz.management.model.User;
+
+public class UserService {
+
+	
+	
+
+	public List<User> getUsersList() {
+		return userList;
+
+	}
+
+	public static String addUser(User user) {
+		userList.add(user);
+		return "User added Successfully";
+	}
+}

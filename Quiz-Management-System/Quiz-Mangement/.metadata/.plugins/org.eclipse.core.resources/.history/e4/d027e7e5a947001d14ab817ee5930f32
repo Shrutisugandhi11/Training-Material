@@ -1,0 +1,18 @@
+package com.epam.quiz.management.ui;
+
+import com.epam.quiz.management.service.Quiz;
+
+public class UserUi {
+
+	public Quiz getQuiz(String tag,String category) {
+	
+		
+		
+		return null;
+		
+	}
+	
+	
+	
+	
+}

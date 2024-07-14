@@ -1,0 +1,49 @@
+package com.epam.quiz.management.ui;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.epam.quiz.management.dao.QuestionDao;
+import com.epam.quiz.management.dao.QuestionLibrary;
+import com.epam.quiz.management.service.Option;
+import com.epam.quiz.management.service.Question;
+
+public class QuestionUi {
+
+	public void start() {
+		QuestionCrud questionCrud = new QuestionCrud();
+
+		Scanner sc = new Scanner(System.in);
+		boolean isBool = true;
+		while (isBool) {
+			System.out.println("Which operation do you want to perform?");
+			System.out.println(
+					" 1.Create a Question \n 2.Modify a Question \n 3.Remove a Question \n 4.View a Question \n 5.Logout");
+			int option = sc.nextInt();
+			switch (option) {
+			case 1:
+				System.out.println(questionCrud.create());
+				break;
+			case 2:
+				System.out.println(questionCrud.modify());
+				break;
+			case 3:
+				System.out.println(questionCrud.delete());
+
+				break;
+
+			case 4:
+				questionCrud.read();
+				break;
+
+			default:
+				isBool = false;
+				System.out.println("Thank you for chosing our service : ");
+				System.out.println("-------------------------------------");
+				break;
+
+			}
+		}
+	}
+}

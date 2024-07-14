@@ -1,0 +1,80 @@
+package com.epam.quiz.management.service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import com.epam.quiz.management.dao.QuizDao;
+import com.epam.quiz.management.model.Quiz;
+
+public class QuizLibrary implements CrudService<Quiz> {
+
+	private static List<Quiz> quizes = QuizDao.getQuizs();
+
+	public String createQuiz(Quiz quiz) {
+
+	}
+
+	public List<Quiz> viewQuiz(String tag) {
+		List<Quiz> quizs = quizes.stream().filter(x -> x.getCategory().equals(tag)).collect(Collectors.toList());
+		return quizs;
+	}
+
+	public String removeQuiz(int id) {
+		String returnString;
+		boolean flag = false;
+		for (Quiz quiz : quizes) {
+			if (quiz.getId() == id) {
+				quizes.remove(quiz);
+				flag = true;
+				break;
+			}
+		}
+		or (Quiz quiz : quizs) {
+            if (quiz.getId() == id) {
+                questions = quiz.getQuestionList();
+                break;
+		if (flag) {
+			returnString = "Quiz deleted successfully";
+		}
+		returnString = "Quiz not found";
+		return returnString;
+	}
+
+	
+
+	@Override
+	public String create(Quiz obj) {
+		quizes.add(quiz);
+		return "Quiz created succesfully";
+	}
+
+	@Override
+	public List<Quiz> read() {
+		quizes.stream().filter(null)
+		return null;
+	}
+
+	@Override
+	public Quiz readById(int id) {
+		Quiz quiz = quizes.stream().filter(quiz1 -> quiz1.getId() == id).findAny().get();
+
+		return quiz;
+	}
+
+	@Override
+	public Quiz update(int id, String value) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String delete(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String toString() {
+		return "QuizLibrary quizes=" + quizes + "";
+	}
+
+}

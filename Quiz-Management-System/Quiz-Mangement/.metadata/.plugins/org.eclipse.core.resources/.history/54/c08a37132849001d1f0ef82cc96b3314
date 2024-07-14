@@ -1,0 +1,27 @@
+package com.epam.quiz.management.ui;
+
+import com.epam.quiz.management.dao.UserDao;
+import com.epam.quiz.management.exception.CredentialsMismatchException;
+import com.epam.quiz.management.model.User;
+import com.epam.quiz.management.util.Scanner;
+
+public class UserRegister {
+
+	public String registration(String userName, String passwordString) {
+		System.out.println("Enter your role:");
+
+		String returnString="";
+		String role = Scanner.getInstance().nextLine();
+
+		try {
+			User user = new User(userName, passwordString, role);
+			returnString = UserDao.addUser(user);
+		} 
+		catch (CredentialsMismatchException | NullPointerException e) {
+			System.out.println(e.getMessage());}
+
+			return returnString;
+		
+
+	}
+}

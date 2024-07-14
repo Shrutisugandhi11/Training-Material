@@ -1,0 +1,43 @@
+
+Z
+java:S3416")Update this logger to use "QuizUi.class".(€†µŠüÿÿÿÿHçORMINORZ
+CODE_SMELL
+r
+java:S3457^"AFormat specifiers should be used instead of string concatenation.(ğâ½ˆüÿÿÿÿHèORMAJORZ
+CODE_SMELL
+j
+java:S16127"9Replace this lambda with method reference 'Logger::info'.(Ó—ØüÿÿÿÿHéORMINORZ
+CODE_SMELL
+z
+java:S1659<"GDeclare "totalMarks" and all following declarations on a separate line.(ÓüˆË8É×¿å¼0HëORMINORZ
+CODE_SMELL
+c
+java:S16117"2Remove the parentheses around the "quiz" parameter(Ó—ØüÿÿÿÿHïORMINORZ
+CODE_SMELL
+i
+java:S11177"8Rename "quiz" which hides the field declared at line 19.(Ó—ØüÿÿÿÿHğORMAJORZ
+CODE_SMELL
+y
+java:S3457D"AFormat specifiers should be used instead of string concatenation.(ã ÌËøÿÿÿÿ8É×¿å¼0HñORMAJORZ
+CODE_SMELL
+t
+java:S3457M"AFormat specifiers should be used instead of string concatenation.(¢şÊ²8É×¿å¼0HòORMAJORZ
+CODE_SMELL
+l
+java:S1612E"9Replace this lambda with method reference 'Logger::info'.(ÓÚ²8É×¿å¼0HóORMINORZ
+CODE_SMELL
+o
+java:S2629D"7Use the built-in formatting to construct this argument.(ã ÌËøÿÿÿÿ8É×¿å¼0HõORMAJORZ
+CODE_SMELL
+g
+java:S1611E"4Remove the parentheses around the "option" parameter(ÓÚ²8É×¿å¼0HöORMINORZ
+CODE_SMELL
+j
+java:S2629M"7Use the built-in formatting to construct this argument.(¢şÊ²8É×¿å¼0H÷ORMAJORZ
+CODE_SMELL
+i
+java:S1117)"8Rename "quiz" which hides the field declared at line 19.(ûÍ¹“üÿÿÿÿHøORMAJORZ
+CODE_SMELL
+h
+java:S2629^"7Use the built-in formatting to construct this argument.(ğâ½ˆüÿÿÿÿHùORMAJORZ
+CODE_SMELL

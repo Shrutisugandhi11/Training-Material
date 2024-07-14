@@ -1,0 +1,62 @@
+package com.epam.quiz.management.service;
+
+import java.util.List;
+
+public class Quiz {
+	int id;
+	String tag;
+	String category;
+	List<Question> questionList;
+
+	public Quiz() {
+		super();
+	}
+
+	public Quiz(int id, String tag, String category, List<Question> questionList) {
+		super();
+		this.id = id;
+		this.tag = tag;
+		this.category = category;
+		this.questionList = questionList;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTag() {
+		return tag;
+	}
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public List<Question> getQuestionList() {
+		return questionList;
+	}
+
+	public void setQuestionList(List<Question> questionList) {
+		this.questionList = questionList;
+	}
+
+	@Override
+	public String toString() {
+		return "Quiz [tag=" + tag +",id= "+ id + ", category=" + category + ", questionList=" + questionList + "]";
+	}
+
+	
+
+}

@@ -1,0 +1,7 @@
+log4j.rootLogger=DEBUG
+log4j.appender.console.type=Console
+log4j.console.name=console
+log4j.appender.layout.type=PatternLayout
+log4j.appender.layout.Pattern=%-4r [%t] %-5p %c %x - %m%n
+
+#rootLogger.appenderRef.stdout.ref=console

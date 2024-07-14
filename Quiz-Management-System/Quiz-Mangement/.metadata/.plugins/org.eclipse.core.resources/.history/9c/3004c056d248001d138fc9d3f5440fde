@@ -1,0 +1,11 @@
+package com.epam.quiz.management.exception;
+
+public class InvalidInputException extends Exception {
+
+	InvalidInputException() {
+	}
+
+	InvalidInputException(String Str) {
+	}
+
+}

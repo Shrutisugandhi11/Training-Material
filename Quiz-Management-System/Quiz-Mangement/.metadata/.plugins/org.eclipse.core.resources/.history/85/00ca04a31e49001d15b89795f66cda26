@@ -1,0 +1,16 @@
+package com.epam.quiz.management.dao;
+
+public interface UserDb<T> {
+
+	public T save(T obj);
+
+	public T findById(U id);
+
+	public List<T> findAll();
+
+	public T update(T obj);
+
+	public void delete(T obj);
+
+	public void deleteById(int id);
+}

@@ -1,0 +1,77 @@
+package com.epam.quiz.management.model;
+
+import java.util.Objects;
+
+public class User {
+
+	protected String userName;
+	protected String password;
+	protected String roleType="user";
+
+	public User() {
+
+	}
+
+	public User(String userName, String password, String roleType) {
+		super();
+		this.userName = userName;
+		this.password = password;
+		this.roleType = roleType;
+	}
+
+	public User(String username2, String password2) {
+		this.userName = username2;
+		this.password = password2;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getRoleType() {
+		return roleType;
+	}
+
+	public void setRoleType(String roleType) {
+		this.roleType = roleType;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+	
+	
+
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(password, roleType, userName);
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		User other = (User) obj;
+//		return Objects.equals(password, other.password) && Objects.equals(roleType, other.roleType)
+//				&& Objects.equals(userName, other.userName);
+//	}
+
+	@Override
+	public String toString() {
+		return "User [userName=" + userName + ", password=" + password + ", roleType=" + roleType + "]";
+	}
+
+}

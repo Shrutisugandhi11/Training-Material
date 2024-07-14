@@ -1,0 +1,6 @@
+
+Œ
+java:S1488"`Immediately return this expression instead of assigning it to the temporary variable "question".(ù»¸†H´ORMINORZ
+CODE_SMELL
+u
+java:S3655"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ù»¸†H·ORMAJORZBUG

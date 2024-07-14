@@ -1,0 +1,93 @@
+package com.epam.quiz.management.ui;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.quiz.management.App;
+import com.epam.quiz.management.dao.QuestionDao;
+import com.epam.quiz.management.model.Option;
+import com.epam.quiz.management.model.Question;
+import com.epam.quiz.management.service.QuestionLibrary;
+import com.epam.quiz.management.util.Scanner;
+
+public class QuestionCrud {
+	private static final Logger Logger = LogManager.getLogger(QuizCrud.class);
+	private Question question;
+
+	List<Option> listOfOptions = new ArrayList<>();
+	QuestionCrud questionCrud = new QuestionCrud();
+
+	public String create() {
+
+		Logger.debug("-------------------------------");
+		question = new Question();
+
+		Logger.info("Enter Question Details :\n Enter the question id: ");
+		int id = Scanner.getInstance().nextInt();
+		Scanner.getInstance().nextLine();
+
+		question.setId(id);
+		Logger.info("Enter the question title : ");
+		String title = Scanner.getInstance().nextLine();
+
+		question.setTitle(title);
+		Logger.info("Enter the question Diffculty : ");
+		String difficulty = Scanner.getInstance().nextLine();
+
+		question.setDifficulty(difficulty);
+		Logger.info("Enter the question tag : ");
+		String tag = Scanner.getInstance().nextLine();
+
+		question.setTag(tag);
+		Logger.info("Enter the question answer : ");
+		int answer = Scanner.getInstance().nextInt();
+
+		Scanner.getInstance().nextLine();
+		question.setAnswer(answer);
+
+		System.out.println("Enter the options : ");
+		for (int i = 1; i <= 4; i++) {
+			Logger.info("option " + i + " : ");
+			String choice = Scanner.getInstance().nextLine();
+			Option option1 = new Option();
+			option1.setChoice(choice);
+			listOfOptions.add(option1);
+		}
+
+		question.setOptions(listOfOptions);
+
+		return questionCrud.create(question);
+	}
+
+	public String update() {
+		Logger.debug("---------------------------------");
+
+		Logger.info("Enter Question id:");
+		int id = Scanner.getInstance().nextInt();
+		Scanner.getInstance().nextLine();
+
+		Logger.info("Enter your updating value");
+		String updateString = Scanner.getInstance().nextLine();
+
+		question = questionCrud.update(id, updateString);
+
+		return question.toString();
+	}
+
+	public String delete() {
+		Logger.debug("------------------------------");
+		Logger.info("Enter the question id which you want to remove : ");
+		int removeId = Scanner.getInstance().nextInt();
+		return questionCrud.delete(removeId);
+	}
+
+	public void read() {
+		Logger.debug("---------------------------------");
+		List<Question> list = questionCrud.read();
+		list.stream().forEach(System.out::println);
+	}
+
+}

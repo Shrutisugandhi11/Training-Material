@@ -1,0 +1,23 @@
+package com.epam.quiz.management.ui;
+
+import java.util.Scanner;
+
+public class AdminHomePage {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.println("Hello ,Admin!!");
+		System.out.println("What operation do you wan to perform? \n 1.Go To Quiz Section \n 2.Go To Question Section");
+		int operation = scanner.nextInt();
+		if (operation == 1) {
+			new QuizUi().start();
+
+		} else if (operation == 2) {
+			QuestionUi questionUi = new QuestionUi();
+			questionUi.start();
+
+		}
+
+	}
+}

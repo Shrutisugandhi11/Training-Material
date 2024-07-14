@@ -1,0 +1,63 @@
+package com.epam.quiz.management.dao;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import com.epam.quiz.management.model.Option;
+import com.epam.quiz.management.service.Question;
+
+public class QuestionDao {
+	public static List<Question> getObjectList() {
+		return Stream
+				.of(new Question(1, "Number of primitive data types in Java are?",
+						Arrays.asList(new Option("6"), new Option("7"), new Option("8"), new Option("9")), "easy",
+						"java", 3),
+						new Question(2, "What of the following is the default value of an instance variable?",
+								Arrays.asList(new Option("null"), new Option("0"),
+										new Option("Depends upon the type of variable"), new Option(" Not assigned")),
+								"easy", "java", 2),
+						new Question(3, "What is the size of float variable?",
+								Arrays.asList(new Option("8 bit"), new Option("16 bit"), new Option("32 bit"),
+										new Option(" 64 bit")),
+								"easy", "java", 3),
+						new Question(4, "What is the default value of long variable?",
+								Arrays.asList(new Option("0"), new Option(" 0.0"), new Option("0L"),
+										new Option("not defined")),
+								"easy", "java", 3),
+						new Question(5, "Which of the following is true about String?",
+								Arrays.asList(new Option("String is mutable."), new Option("String is immutable."),
+										new Option("String is a data type."), new Option("None of the above.")),
+								"hard", "java", 2),
+						new Question(6, "What is an immutable object?",
+								Arrays.asList(new Option(" An immutable object can be changed once it is created."),
+										new Option(" An immutable object can't be changed once it is created."),
+										new Option("An immutable object is an instance of an abstract class."),
+										new Option("None of the above.")),
+								"medium", "java", 2),
+						new Question(7, "What is a marker interface?",
+								Arrays.asList(new Option("marker interface is an interface with no method."),
+										new Option("marker interface is an interface with single method, mark()."),
+										new Option("marker interface is an interface with single method, marker()."),
+										new Option("none of the above.")),
+								"easy", "java", 1),
+						new Question(8, "Which of the following is a superclass of every class in Java?",
+								Arrays.asList(new Option(" ArrayList"), new Option("Abstract class"),
+										new Option("String"), new Option("Object class")),
+								"hard", "java", 4),
+						new Question(9, "Which of these are selection statements in Java?",
+								Arrays.asList(new Option("break"), new Option("continue"), new Option("for()"),
+										new Option("if()")),
+								"medium", "java", 4),
+						new Question(10, "Which of these keywords is used to define interfaces in Java?",
+								Arrays.asList(new Option("Interface"), new Option("interface"), new Option("intf"),
+										new Option("Intf")),
+								"hard", "java", 2))
+				.collect(Collectors.toList());
+
+	}
+
+}

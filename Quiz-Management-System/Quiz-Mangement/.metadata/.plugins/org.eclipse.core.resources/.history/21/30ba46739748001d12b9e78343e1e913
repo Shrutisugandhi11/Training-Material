@@ -1,0 +1,15 @@
+package com.epam.quiz.management.ui;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import com.epam.quiz.management.dao.QuestionDao;
+import com.epam.quiz.management.dao.QuestionLibrary;
+import com.epam.quiz.management.service.Option;
+import com.epam.quiz.management.service.Question;
+
+public class QuestionUi {
+
+	
+}

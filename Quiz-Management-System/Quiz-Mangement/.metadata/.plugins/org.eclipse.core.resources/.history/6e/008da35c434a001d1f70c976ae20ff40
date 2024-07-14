@@ -1,0 +1,36 @@
+package com.epam.quiz.management.dao;
+
+import java.util.List;
+
+import com.epam.quiz.management.model.Admin;
+import com.epam.quiz.management.model.User;
+
+public class UserDao {
+	public static List<User> userList;
+
+	static {
+		User user = new Admin("Admin", "admin", "admin");
+		User user2 = new User("Shruti", "1234", "user");
+		userList.add(user);
+		userList.add(user2);
+	}
+
+	public static List<User> getUserInstance() {
+
+	}
+
+	public UserDao() {
+
+	}
+
+}
+
+//public List<User> getUsersList() {
+//	return userList;
+//
+//}
+//
+//public static String addUser(User user) {
+//	userList.add(user);
+//	return "User added Successfully";
+//}

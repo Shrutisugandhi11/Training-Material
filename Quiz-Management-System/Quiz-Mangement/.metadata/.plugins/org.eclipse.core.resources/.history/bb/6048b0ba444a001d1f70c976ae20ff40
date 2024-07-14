@@ -1,0 +1,48 @@
+package com.epam.quiz.management.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.epam.quiz.management.exception.CredentialsMismatchException;
+import com.epam.quiz.management.model.User;
+import com.epam.quiz.management.ui.UserOperation;
+
+public class UserAuthentication {
+	UserOperation userOperation;
+
+	public boolean validateUser(String username, String password, String roleType) {
+		User user;
+
+		List<User> userList = userOperation.getUsersList();
+		boolean isValidate = false;
+
+		Optional<User> optionalUser = userList.stream().filter(x -> x.getRoleType().equals(roleType))
+				.filter(x -> x.getUserName().equals(username)).findAny();
+		try {
+			if (optionalUser.isPresent()) {
+				user = optionalUser.get();
+
+				if (user.getUserName().equals(username) && user.getPassword().equals(password)) {
+					if (user.getRoleType().equals("admin") || user.getRoleType().equals("user"))
+						isValidate = true;
+
+				} else
+					throw new CredentialsMismatchException("Invalid credentials ,Please Enter valid credentials!!!");
+
+			} else
+				throw new CredentialsMismatchException("Error while validating user please retry....");
+		} catch (CredentialsMismatchException e) {
+
+		}
+
+		return isValidate;
+	}
+
+public UserAuthentication() {
+	userOperation=new UserOperation();
+}
+	
+			
+}
+
+

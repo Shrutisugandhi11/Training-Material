@@ -1,0 +1,21 @@
+package com.epam.quiz.management;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.quiz.management.ui.Menu;
+
+public class App {
+	private static final Logger Logger = LogManager.getLogger(App.class);
+
+	public static void main(String[] args) {
+		Logger.debug("App started");
+		Logger.info("App started");
+		Logger.warn("App started");
+		Logger.error("App started");
+		Logger.fatal("App started");
+		Menu menu = new Menu();
+		menu.getDashboard();
+
+	}
+}

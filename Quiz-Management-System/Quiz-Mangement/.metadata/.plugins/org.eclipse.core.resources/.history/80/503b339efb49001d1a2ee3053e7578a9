@@ -1,0 +1,82 @@
+package com.epam.quiz.management.ui;
+
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.quiz.management.App;
+import com.epam.quiz.management.exception.CredentialsMismatchException;
+import com.epam.quiz.management.service.UserAuthentication;
+import com.epam.quiz.management.util.Scanner;
+
+public class Menu {
+	private static final Logger Logger = LogManager.getLogger(Menu.class);
+
+	public void getDashboard() {
+		int choice;
+		String userName;
+		String passwordString;
+		boolean isTrue = true;
+
+		UserAuthentication userAuthentication = new UserAuthentication();
+
+		while (isTrue) {
+			Logger.debug("=================WelCome to quiz=================");
+
+			Logger.info("\n Enter your choice: \n1.User \n2.Admin \n3.Register User \n4.Exit");
+			Logger.info("Your Choice: ");
+
+			choice = Scanner.getInstance().nextInt();
+			Scanner.getInstance().nextLine();
+
+			if (choice == 4) {
+				Logger.debug("Exited From Quiz!!");
+				break;
+			}
+
+			String role = (choice == 1) ? "user" : "admin";
+
+			Logger.debug("==================Welcome To Login Page====================");
+			Logger.log(Level.INFO, "Your Username:{} ", "");
+
+			userName = Scanner.getInstance().nextLine();
+			Logger.log(Level.INFO, "Your Password:{} ", "");
+			passwordString = Scanner.getInstance().nextLine();
+
+			try {
+				if (choice == 3) {
+
+					UserRegister userRegister = new UserRegister();
+					Logger.info(userRegister.registration(userName, passwordString));
+
+				} else {
+					boolean isValidateUser = userAuthentication.validateUser(userName, passwordString, role);
+					if (!isValidateUser) {
+						throw new CredentialsMismatchException("user login error");
+					}
+					UserHomePage userHomePage = new UserHomePage();
+					if (role.equals("admin")) {
+						userHomePage.redirectAdmin(userName);
+					}
+
+					else {
+
+						userHomePage.redirectUser(userName);
+
+					}
+				}
+			} catch (CredentialsMismatchException | NullPointerException e) {
+				Logger.error(e.getMessage());
+			}
+		}
+	}		
+//	  void getCredentials() {
+//		  String role = (choice == 1) ? "user" : "admin";
+//	Logger.debug("==================Welcome To Login Page====================");
+//	Logger.log(Level.INFO, "Your Username:{} ", "");
+//
+//	userName = Scanner.getInstance().nextLine();
+//	Logger.log(Level.INFO, "Your Password:{} ", "");
+//	passwordString = Scanner.getInstance().nextLine();
+//	  }
+}

@@ -1,0 +1,36 @@
+package com.epam.quiz.management.ui;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.epam.quiz.management.dao.QuizDao;
+import com.epam.quiz.management.service.Question;
+import com.epam.quiz.management.service.Quiz;
+
+public class UserUi {
+	List<Quiz> quizs = QuizDao.getQuizs();
+
+	public List<Quiz> getQuiz() {
+		for (Quiz quiz : quizs) {
+			System.out.println("Available quizes of category:" + quiz.getCategory());
+			System.out.println("Available Difficulty level:" + quiz.getTag());
+		}
+
+	}
+
+	public List<Question> getQuestionList(int id) {
+		for (Quiz quiz : quizs) {
+			if (quiz.getId() == id) {
+				quiz.getQuestionList();
+			}
+		}
+
+	}
+
+	public Question getQuestion() {
+
+		return null;
+
+	}
+
+}

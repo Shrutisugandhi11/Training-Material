@@ -1,0 +1,69 @@
+package com.epam.quiz.management.ui;
+
+import static org.junit.jupiter.api.DynamicTest.stream;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.epam.quiz.management.dao.QuestionDao;
+import com.epam.quiz.management.model.Question;
+import com.epam.quiz.management.model.Quiz;
+import com.epam.quiz.management.service.QuizLibrary;
+import com.epam.quiz.management.util.Scanner;
+
+public class QuizCrud {
+	Quiz quiz;
+	List<Question> listQuestions = new ArrayList<>();
+	QuizLibrary quizLibrary = new QuizLibrary();
+	QuestionCrud questionCrud;
+
+	public Quiz create() {
+
+		System.out.println("--------------------------------");
+
+		System.out.println("Enter Quiz Details:\n Enter Quiz Id:");
+		int id = Scanner.getInstance().nextInt();
+		Scanner.getInstance().nextLine();
+
+		System.out.println("Enter Quiz Tag:");
+		String tag = Scanner.getInstance().nextLine();
+
+		System.out.println("Enter Quiz Difficilty:");
+		String difficulty = Scanner.getInstance().nextLine();
+
+		listQuestions = QuestionDao.getObjectList().stream().filter(x -> x.getTag().equals(tag))
+				.filter(x -> x.getDifficulty().equals(difficulty)).collect(Collectors.toList());
+
+		Quiz quiz = new Quiz(id, tag, difficulty, listQuestions);
+		quizLibrary.create(quiz);
+		return quiz;
+	}
+
+	public void <Quiz> read() {
+
+		System.out.println("------------------------------");
+		System.out.println("Enter tag of quiz you want?:");
+		String tag = Scanner.getInstance().nextLine();
+
+		List<Quiz> quizList =  quizLibrary.readByTag(tag);O
+		quizList.stream().forEach(System.out::println);
+
+		
+	}
+
+	public String delete() {
+
+		System.out.println("----------------------------------");
+		System.out.println("Enter the question id which you want to remove : ");
+
+		int removeId = Scanner.getInstance().nextInt();
+		quiz = quizLibrary.viewQuizById(removeId);
+
+		if (quiz == null) {
+			System.out.println("Question with id : " + removeId + " is not found ");
+		}
+
+		return quizLibrary.removeQuiz(removeId);
+	}
+}

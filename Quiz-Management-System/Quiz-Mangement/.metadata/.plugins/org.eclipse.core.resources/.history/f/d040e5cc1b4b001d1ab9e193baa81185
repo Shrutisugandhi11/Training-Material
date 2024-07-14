@@ -1,0 +1,13 @@
+package com.epam.junit.demo;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+	public String removeAString(String string) {
+		if (string.length() == 0)
+			return string;
+		return string;
+	}
+}

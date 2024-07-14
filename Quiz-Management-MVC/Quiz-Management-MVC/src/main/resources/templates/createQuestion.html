@@ -1,0 +1,93 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head><title>Quiz-Management-System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center">Add a new Question</h1>
+            <div class="card-body">
+                <form th:action="@{/question/save}" th:object="${question}" method="POST">
+                    <div class="form-group">
+                        <label>Question:</label>
+                        <input type="text"
+                               name="title"
+                               th:field="*{title}"
+                               class="form-control"
+                               placeholder="title"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label> Option A:</label>
+                        <input type="text"
+                               name="option"
+                               th:field="*{option}"
+                               class="form-control"
+                               placeholder="option"
+                        />
+                        <label> Option B:</label>
+                        <input type="text"
+                               name="option"
+                               th:field="*{option}"
+                               class="form-control"
+                               placeholder="option"
+                        />
+                        <label> Option C:</label>
+                        <input type="text"
+                               name="option"
+                               th:field="*{option}"
+                               class="form-control"
+                               placeholder="option"
+                        />
+                        <label> Option D:</label>
+                        <input type="text"
+                               name="option"
+                               th:field="*{option}"
+                               class="form-control"
+                               placeholder="option"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Difficulty:</label>
+                        <input type="text"
+                               name="difficulty"
+                               th:field="*{title}"
+                               class="difficulty"
+                               placeholder="difficulty"
+                        /></div>
+                    <div class="form-group">
+                        <label>Tag:</label>
+                        <input type="text"
+                               name="tag"
+                               th:field="*{tag}"
+                               class="form-control"
+                               placeholder="tag"
+                        /></div>
+                    <div class="form-group">
+                        <label>Answer:</label>
+                        <input type="text"
+                               name="answer"
+                               th:field="*{answer}"
+                               class="form-control"
+                               placeholder="answer"
+                        /></div>
+                    <div class="box- footer">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+package com.epam.quiz.management.service;
+
+import java.util.List;
+import com.epam.quiz.management.dao.QuestionDao;
+import com.epam.quiz.management.model.Question;
+
+public class QuestionLibrary implements CrudSercvice<Question> {
+
+	private static List<Question> listOfQuestions = QuestionDao.getObjectList();
+
+	public String modifyQuestion(int id, Question q) {
+		String returnString;
+		boolean flag = false;
+		for (Question question1 : listOfQuestions) {
+			if (question.getId() == question1.getId()) {
+				question.setAnswer(question1.getAnswer());
+				question.setDifficulty(question1.getDifficulty());
+				question.setOptions(question1.getOptions());
+				question.setTag(question1.getTag());
+				question.setTitle(question1.getTitle());
+				flag = true;
+				break;
+			}
+		}
+		if (flag) {
+			returnString = "Question modified successfully";
+		}
+		returnString = "Question not found";
+		return returnString;
+	}
+
+	}
+
+	public String removeQuestion(int id) {
+
+	}
+
+	public Question update(int id, int choice, String updateValue) {
+		Question ques = viewQuestionById(id);
+		if (ques != null) {
+			switch (choice) {
+			case 1:
+				ques.setTitle(updateValue);
+				break;
+			case 2:
+				ques.setTag(updateValue);
+				break;
+			case 3:
+				ques.setDifficulty(updateValue);
+				break;
+
+			default:
+				break;
+			}
+		}
+		return ques;
+
+	}
+
+	public List<Question> viewQuestion() {
+		return listOfQuestions;
+	}
+
+	public Question viewQuestionById(int id) {
+		Question ques = new Question();
+		for (Question question : listOfQuestions) {
+			if (question.getId() == id) {
+				ques = question;
+			}
+		}
+		return ques;
+	}
+
+	@Override
+	public String toString() {
+		return "QuestionLibrary [listOfQuestions=" + listOfQuestions.toString() + "]";
+	}
+
+	@Override
+	public String create(Question question) {
+		listOfQuestions.add(question);
+		return "question added successfully";
+		return null;
+	}
+
+	@Override
+	public String read() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String readById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String update(int id,Question question) {
+
+	@Override
+	public String delete(int id) {
+		String returnString;
+		boolean flag = false;
+		for (Question question : listOfQuestions) {
+			if (question.getId() == id) {
+				listOfQuestions.remove(question);
+				flag = true;
+				break;
+			}
+		}
+		if (!flag) {
+			returnString = "Question not found";
+		}
+		returnString = "Question deleted successfully";
+		return returnString;
+
+	}
+
+}

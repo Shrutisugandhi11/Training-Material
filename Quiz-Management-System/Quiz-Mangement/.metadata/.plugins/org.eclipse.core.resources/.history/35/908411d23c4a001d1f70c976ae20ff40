@@ -1,0 +1,71 @@
+package com.epam.quiz.management.ui;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.epam.quiz.management.dao.QuestionDao;
+import com.epam.quiz.management.model.Question;
+import com.epam.quiz.management.model.Quiz;
+import com.epam.quiz.management.service.QuestionCrud;
+import com.epam.quiz.management.service.QuizCrud;
+import com.epam.quiz.management.util.Scanner;
+
+public class QuizUi {
+	private static final Logger Logger = LogManager.getLogger(QuizCrud.class);
+	Quiz quiz;
+	List<Question> listQuestions = new ArrayList<>();
+	QuizCrud quizCrud = new QuizCrud();
+	QuestionCrud questionCrud;
+
+	public Quiz create() {
+
+		Logger.debug("--------------------------------");
+
+		Logger.info("Enter Quiz Details:\n Enter Quiz Id:");
+		int id = Scanner.getInstance().nextInt();
+		Scanner.getInstance().nextLine();
+
+		Logger.info("Enter Quiz Tag:");
+		String tag = Scanner.getInstance().nextLine();
+
+		Logger.info("Enter Quiz Difficilty:");
+		String difficulty = Scanner.getInstance().nextLine();
+
+		listQuestions = QuestionDao.getObjectList().stream().filter(x -> x.getTag().equals(tag))
+				.filter(x -> x.getDifficulty().equals(difficulty)).collect(Collectors.toList());
+
+		Quiz quiz = new Quiz(id, tag, difficulty, listQuestions);
+		quizCrud.create(quiz);
+		return quiz;
+	}
+
+	public void read() {
+
+		Logger.debug("------------------------------");
+		Logger.info("Enter tag of quiz you want?:");
+		Scanner.getInstance().nextLine();
+
+		String tag = Scanner.getInstance().nextLine();
+		List<Quiz> quizList = quizCrud.readByTag(tag);
+
+		quizList.stream().forEach((quiz) -> Logger.info(quiz));
+	}
+
+	public String delete() {
+		Logger.debug("----------------------------------");
+		Logger.info("Enter the question id which you want to remove : ");
+
+		int removeId = Scanner.getInstance().nextInt();
+		quiz = quizCrud.readById(removeId);
+
+		if (quiz == null) {
+			Logger.info("Question with id : " + removeId + " is not found ");
+		}
+
+		return quizCrud.delete(removeId);
+	}
+}

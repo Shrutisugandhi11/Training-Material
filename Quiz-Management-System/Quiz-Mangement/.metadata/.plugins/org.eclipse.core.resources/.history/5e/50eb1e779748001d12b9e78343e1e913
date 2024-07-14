@@ -1,0 +1,11 @@
+package com.epam.quiz.management.service;
+
+import com.epam.quiz.management.service.User;
+
+public class Admin extends User {
+
+	public Admin(String userName, String password, String roleType) {
+		super(userName, password, roleType);
+	}
+
+}

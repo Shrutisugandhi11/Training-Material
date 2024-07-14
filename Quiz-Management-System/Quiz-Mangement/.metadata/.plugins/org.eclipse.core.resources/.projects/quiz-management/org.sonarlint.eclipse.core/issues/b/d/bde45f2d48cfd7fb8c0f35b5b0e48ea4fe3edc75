@@ -1,0 +1,14 @@
+
+g
+java:S3416"/Update this logger to use "UserRegister.class".(šóôÁøÿÿÿÿ8ĞšóĞ¼0HPRMINORZ
+CODE_SMELL
+s
+java:S1128"@Remove this unused import 'com.epam.quiz.management.model.User'.(š§€Ÿ8Î„´ı¼0H‚PRMINORZ
+CODE_SMELL
+z
+java:S1128"BRemove this unused import 'com.epam.quiz.management.util.Scanner'.(¯ÃÉæúÿÿÿÿ8ìÎ¹ı¼0H„PRMINORZ
+CODE_SMELL
+s	java:S125"<This block of commented-out lines of code should be removed.(‚ Úüÿÿÿÿ8ìÎ¹ı¼0H†PRMAJORZ
+CODE_SMELL
+m	java:S125"<This block of commented-out lines of code should be removed.(ò÷Æ8ìÎ¹ı¼0H‡PRMAJORZ
+CODE_SMELL

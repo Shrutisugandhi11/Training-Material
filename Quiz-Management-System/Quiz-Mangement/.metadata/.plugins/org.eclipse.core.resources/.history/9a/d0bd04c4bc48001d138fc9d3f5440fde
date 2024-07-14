@@ -1,0 +1,5 @@
+package com.epam.quiz.management.service;
+
+public interface CrudSercvice {
+
+}
